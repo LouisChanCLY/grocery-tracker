@@ -1,0 +1,8 @@
+streamlit==1.20.0
+streamlit-tags==1.2.8
+pandas==1.3.4
+gspread==3.7.0
+oauth2client==4.1.3
+altair==4.1.0
+gspread_dataframe==3.3.0
+streamlit-aggrid==0.3.4
