@@ -41,7 +41,7 @@ class GroceryPrice:
     unit: str = field(compare=False)
     branch: str = field(compare=False)
     price: float = field(compare=False)
-    unit_price: float = field(init=False)
+    unit_price: float = field(init=False, compare=True)
 
     def __post_init__(self):
         self.unit_price = self.price * self.denominator / self.size
@@ -197,6 +197,7 @@ def app():
                 if len(np.intersect1d(item.tags, selected_tags)) == len(selected_tags):
                     filtered_items.append(item)
 
+        filtered_items = sorted(filtered_items)
         cheapest_items = get_cheapest_item_from_sorted(filtered_items)
         other_items = filtered_items[len(cheapest_items) :]
 
